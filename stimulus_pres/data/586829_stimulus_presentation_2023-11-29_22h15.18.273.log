@@ -1,0 +1,349 @@
+7.7115 	WARNING 	Couldn't measure a consistent frame rate!
+  - Is your graphics card set to sync to vertical blank?
+  - Are you running other processes on your computer?
+
+7.7170 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x7feaa250adf0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x7feaa250ad90>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([-1., -1., -1.]), colorSpace='rgb', depthBits=8, fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x7feaa250ac10>, gamma=None, gammaErrorPolicy='raise', lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x7feaa2c37790>, multiSample=False, name='window1', numSamples=2, pos=[360.0, 225.0], screen=0, size=array([2880, 1800]), stencilBits=0, stereo=False, units='height', useFBO=True, useRetina=True, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+7.7177 	EXP 	window1: mouseVisible = True
+7.7177 	EXP 	window1: backgroundImage = ''
+7.7177 	EXP 	window1: backgroundFit = 'none'
+7.7187 	EXP 	window1: mouseVisible = False
+7.7187 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+7.7187 	EXP 	window1: recordFrameIntervals = False
+7.8326 	EXP 	window1: recordFrameIntervals = True
+8.2117 	EXP 	Screen (0) actual frame rate measured at 59.78Hz
+8.2118 	EXP 	window1: recordFrameIntervals = True
+10.8904 	EXP 	Created Welcome_Message = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='Welcome_Message', opacity=1.0, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='Welcome to bot or not!\nClick to start.', units='height', win=Window(...), wrapWidth=1)
+10.8906 	EXP 	window1: mouseVisible = True
+10.9129 	EXP 	Created face = ImageStim(__class__=<class 'psychopy.visual.image.ImageStim'>, anchor=('center', 'center'), autoLog=True, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, image='default.png', interpolate=True, mask=None, maskParams=None, name='face', opacity=1.0, ori=0.0, pos=array([0., 0.]), size=array([1., 1.]), texRes=128.0, units='height', win=Window(...))
+10.9436 	WARNING 	t of last frame was 2732.33ms (=1/0)
+10.9436 	EXP 	Welcome_Message: autoDraw = True
+12.7256 	WARNING 	t of last frame was 26.37ms (=1/37)
+13.5703 	DATA 	Mouse: Left button down, pos=(638,338)
+13.5819 	EXP 	Imported face_images.xlsx as conditions, 12 conditions, 1 params
+13.5838 	EXP 	Created sequence: random, trialTypes=12, nReps=5, seed=None
+13.5840 	EXP 	New trial (rep=0, index=0): {'images': 'real_images/p5.png'}
+13.5842 	WARNING 	Requested image 'real_images/p5.png' not found but similar filename 'real_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+13.6129 	WARNING 	t of last frame was 37.76ms (=1/26)
+13.6129 	EXP 	Welcome_Message: autoDraw = False
+13.6129 	EXP 	face: image = 'real_images/p5.png'
+13.6129 	EXP 	face: autoDraw = True
+13.6998 	DATA 	Mouse:  Left button up, pos=(638,338)
+14.0768 	EXP 	New trial (rep=0, index=1): {'images': 'ai_images/p4.png'}
+14.0772 	WARNING 	Requested image 'ai_images/p4.png' not found but similar filename 'ai_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+14.0962 	EXP 	face: autoDraw = False
+14.0962 	EXP 	face: image = 'ai_images/p4.png'
+14.0962 	EXP 	face: autoDraw = True
+14.5839 	EXP 	New trial (rep=0, index=2): {'images': 'real_images/p3.png'}
+14.5841 	WARNING 	Requested image 'real_images/p3.png' not found but similar filename 'real_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+14.6055 	WARNING 	t of last frame was 22.14ms (=1/45)
+14.6055 	EXP 	face: autoDraw = False
+14.6055 	EXP 	face: image = 'real_images/p3.png'
+14.6055 	EXP 	face: autoDraw = True
+15.0842 	EXP 	New trial (rep=0, index=3): {'images': 'ai_images/p3.png'}
+15.0845 	WARNING 	Requested image 'ai_images/p3.png' not found but similar filename 'ai_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+15.1023 	EXP 	face: autoDraw = False
+15.1023 	EXP 	face: image = 'ai_images/p3.png'
+15.1023 	EXP 	face: autoDraw = True
+15.5800 	EXP 	New trial (rep=0, index=4): {'images': 'ai_images/p6.png'}
+15.5802 	WARNING 	Requested image 'ai_images/p6.png' not found but similar filename 'ai_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+15.5984 	EXP 	face: autoDraw = False
+15.5984 	EXP 	face: image = 'ai_images/p6.png'
+15.5984 	EXP 	face: autoDraw = True
+16.0829 	EXP 	New trial (rep=0, index=5): {'images': 'ai_images/p5.png'}
+16.0831 	WARNING 	Requested image 'ai_images/p5.png' not found but similar filename 'ai_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+16.1001 	EXP 	face: autoDraw = False
+16.1001 	EXP 	face: image = 'ai_images/p5.png'
+16.1001 	EXP 	face: autoDraw = True
+16.5767 	EXP 	New trial (rep=0, index=6): {'images': 'real_images/p4.png'}
+16.5771 	WARNING 	Requested image 'real_images/p4.png' not found but similar filename 'real_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+16.5995 	WARNING 	Multiple dropped frames have occurred - I'll stop bothering you about them!
+16.5995 	EXP 	face: autoDraw = False
+16.5995 	EXP 	face: image = 'real_images/p4.png'
+16.5995 	EXP 	face: autoDraw = True
+17.0767 	EXP 	New trial (rep=0, index=7): {'images': 'ai_images/p2.png'}
+17.0771 	WARNING 	Requested image 'ai_images/p2.png' not found but similar filename 'ai_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+17.0948 	EXP 	face: autoDraw = False
+17.0948 	EXP 	face: image = 'ai_images/p2.png'
+17.0948 	EXP 	face: autoDraw = True
+17.5833 	EXP 	New trial (rep=0, index=8): {'images': 'ai_images/p1.png'}
+17.5837 	WARNING 	Requested image 'ai_images/p1.png' not found but similar filename 'ai_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+17.6006 	EXP 	face: autoDraw = False
+17.6006 	EXP 	face: image = 'ai_images/p1.png'
+17.6006 	EXP 	face: autoDraw = True
+17.6332 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+17.6492 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+18.0816 	EXP 	New trial (rep=0, index=9): {'images': 'real_images/p6.png'}
+18.0819 	WARNING 	Requested image 'real_images/p6.png' not found but similar filename 'real_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+18.0982 	EXP 	face: autoDraw = False
+18.0982 	EXP 	face: image = 'real_images/p6.png'
+18.0982 	EXP 	face: autoDraw = True
+18.5833 	EXP 	New trial (rep=0, index=10): {'images': 'real_images/p1.png'}
+18.5837 	WARNING 	Requested image 'real_images/p1.png' not found but similar filename 'real_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+18.6028 	EXP 	face: autoDraw = False
+18.6028 	EXP 	face: image = 'real_images/p1.png'
+18.6028 	EXP 	face: autoDraw = True
+19.0766 	EXP 	New trial (rep=0, index=11): {'images': 'real_images/p2.png'}
+19.0769 	WARNING 	Requested image 'real_images/p2.png' not found but similar filename 'real_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+19.0964 	EXP 	face: autoDraw = False
+19.0964 	EXP 	face: image = 'real_images/p2.png'
+19.0964 	EXP 	face: autoDraw = True
+19.3673 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+19.4009 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+19.5839 	EXP 	New trial (rep=1, index=0): {'images': 'ai_images/p3.png'}
+19.5842 	WARNING 	Requested image 'ai_images/p3.png' not found but similar filename 'ai_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+19.6016 	EXP 	face: autoDraw = False
+19.6016 	EXP 	face: image = 'ai_images/p3.png'
+19.6016 	EXP 	face: autoDraw = True
+20.0334 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+20.0336 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+20.0831 	EXP 	New trial (rep=1, index=1): {'images': 'real_images/p1.png'}
+20.0833 	WARNING 	Requested image 'real_images/p1.png' not found but similar filename 'real_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+20.0995 	EXP 	face: autoDraw = False
+20.0995 	EXP 	face: image = 'real_images/p1.png'
+20.0995 	EXP 	face: autoDraw = True
+20.5823 	EXP 	New trial (rep=1, index=2): {'images': 'ai_images/p5.png'}
+20.5825 	WARNING 	Requested image 'ai_images/p5.png' not found but similar filename 'ai_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+20.5978 	EXP 	face: autoDraw = False
+20.5978 	EXP 	face: image = 'ai_images/p5.png'
+20.5978 	EXP 	face: autoDraw = True
+21.0832 	EXP 	New trial (rep=1, index=3): {'images': 'ai_images/p4.png'}
+21.0835 	WARNING 	Requested image 'ai_images/p4.png' not found but similar filename 'ai_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+21.1019 	EXP 	face: autoDraw = False
+21.1019 	EXP 	face: image = 'ai_images/p4.png'
+21.1019 	EXP 	face: autoDraw = True
+21.5831 	EXP 	New trial (rep=1, index=4): {'images': 'ai_images/p6.png'}
+21.5833 	WARNING 	Requested image 'ai_images/p6.png' not found but similar filename 'ai_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+21.5986 	EXP 	face: autoDraw = False
+21.5986 	EXP 	face: image = 'ai_images/p6.png'
+21.5986 	EXP 	face: autoDraw = True
+22.0838 	EXP 	New trial (rep=1, index=5): {'images': 'ai_images/p1.png'}
+22.0842 	WARNING 	Requested image 'ai_images/p1.png' not found but similar filename 'ai_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+22.1005 	EXP 	face: autoDraw = False
+22.1005 	EXP 	face: image = 'ai_images/p1.png'
+22.1005 	EXP 	face: autoDraw = True
+22.5831 	EXP 	New trial (rep=1, index=6): {'images': 'real_images/p2.png'}
+22.5834 	WARNING 	Requested image 'real_images/p2.png' not found but similar filename 'real_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+22.6005 	EXP 	face: autoDraw = False
+22.6005 	EXP 	face: image = 'real_images/p2.png'
+22.6005 	EXP 	face: autoDraw = True
+23.0828 	EXP 	New trial (rep=1, index=7): {'images': 'real_images/p3.png'}
+23.0830 	WARNING 	Requested image 'real_images/p3.png' not found but similar filename 'real_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+23.0998 	EXP 	face: autoDraw = False
+23.0998 	EXP 	face: image = 'real_images/p3.png'
+23.0998 	EXP 	face: autoDraw = True
+23.5837 	EXP 	New trial (rep=1, index=8): {'images': 'real_images/p4.png'}
+23.5840 	WARNING 	Requested image 'real_images/p4.png' not found but similar filename 'real_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+23.6011 	EXP 	face: autoDraw = False
+23.6011 	EXP 	face: image = 'real_images/p4.png'
+23.6011 	EXP 	face: autoDraw = True
+24.0831 	EXP 	New trial (rep=1, index=9): {'images': 'real_images/p6.png'}
+24.0834 	WARNING 	Requested image 'real_images/p6.png' not found but similar filename 'real_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+24.0994 	EXP 	face: autoDraw = False
+24.0994 	EXP 	face: image = 'real_images/p6.png'
+24.0994 	EXP 	face: autoDraw = True
+24.2661 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+24.2839 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+24.5815 	EXP 	New trial (rep=1, index=10): {'images': 'real_images/p5.png'}
+24.5818 	WARNING 	Requested image 'real_images/p5.png' not found but similar filename 'real_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+24.5994 	EXP 	face: autoDraw = False
+24.5994 	EXP 	face: image = 'real_images/p5.png'
+24.5994 	EXP 	face: autoDraw = True
+24.7275 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+24.8688 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+25.0830 	EXP 	New trial (rep=1, index=11): {'images': 'ai_images/p2.png'}
+25.0832 	WARNING 	Requested image 'ai_images/p2.png' not found but similar filename 'ai_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+25.0995 	EXP 	face: autoDraw = False
+25.0995 	EXP 	face: image = 'ai_images/p2.png'
+25.0995 	EXP 	face: autoDraw = True
+25.3003 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+25.5822 	EXP 	New trial (rep=2, index=0): {'images': 'real_images/p3.png'}
+25.5824 	WARNING 	Requested image 'real_images/p3.png' not found but similar filename 'real_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+25.5988 	EXP 	face: autoDraw = False
+25.5988 	EXP 	face: image = 'real_images/p3.png'
+25.5988 	EXP 	face: autoDraw = True
+26.0348 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+26.0830 	EXP 	New trial (rep=2, index=1): {'images': 'real_images/p6.png'}
+26.0833 	WARNING 	Requested image 'real_images/p6.png' not found but similar filename 'real_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+26.1005 	EXP 	face: autoDraw = False
+26.1005 	EXP 	face: image = 'real_images/p6.png'
+26.1005 	EXP 	face: autoDraw = True
+26.5828 	EXP 	New trial (rep=2, index=2): {'images': 'real_images/p4.png'}
+26.5832 	WARNING 	Requested image 'real_images/p4.png' not found but similar filename 'real_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+26.5996 	EXP 	face: autoDraw = False
+26.5996 	EXP 	face: image = 'real_images/p4.png'
+26.5996 	EXP 	face: autoDraw = True
+27.0837 	EXP 	New trial (rep=2, index=3): {'images': 'ai_images/p4.png'}
+27.0840 	WARNING 	Requested image 'ai_images/p4.png' not found but similar filename 'ai_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+27.1016 	EXP 	face: autoDraw = False
+27.1016 	EXP 	face: image = 'ai_images/p4.png'
+27.1016 	EXP 	face: autoDraw = True
+27.5818 	EXP 	New trial (rep=2, index=4): {'images': 'ai_images/p5.png'}
+27.5821 	WARNING 	Requested image 'ai_images/p5.png' not found but similar filename 'ai_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+27.5980 	EXP 	face: autoDraw = False
+27.5980 	EXP 	face: image = 'ai_images/p5.png'
+27.5980 	EXP 	face: autoDraw = True
+28.0823 	EXP 	New trial (rep=2, index=5): {'images': 'real_images/p1.png'}
+28.0825 	WARNING 	Requested image 'real_images/p1.png' not found but similar filename 'real_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+28.0983 	EXP 	face: autoDraw = False
+28.0983 	EXP 	face: image = 'real_images/p1.png'
+28.0983 	EXP 	face: autoDraw = True
+28.5833 	EXP 	New trial (rep=2, index=6): {'images': 'ai_images/p6.png'}
+28.5836 	WARNING 	Requested image 'ai_images/p6.png' not found but similar filename 'ai_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+28.6018 	EXP 	face: autoDraw = False
+28.6018 	EXP 	face: image = 'ai_images/p6.png'
+28.6018 	EXP 	face: autoDraw = True
+29.0830 	EXP 	New trial (rep=2, index=7): {'images': 'real_images/p2.png'}
+29.0833 	WARNING 	Requested image 'real_images/p2.png' not found but similar filename 'real_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+29.0992 	EXP 	face: autoDraw = False
+29.0992 	EXP 	face: image = 'real_images/p2.png'
+29.0992 	EXP 	face: autoDraw = True
+29.5804 	EXP 	New trial (rep=2, index=8): {'images': 'ai_images/p3.png'}
+29.5806 	WARNING 	Requested image 'ai_images/p3.png' not found but similar filename 'ai_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+29.5961 	EXP 	face: autoDraw = False
+29.5961 	EXP 	face: image = 'ai_images/p3.png'
+29.5961 	EXP 	face: autoDraw = True
+30.0826 	EXP 	New trial (rep=2, index=9): {'images': 'ai_images/p1.png'}
+30.0828 	WARNING 	Requested image 'ai_images/p1.png' not found but similar filename 'ai_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+30.0983 	EXP 	face: autoDraw = False
+30.0983 	EXP 	face: image = 'ai_images/p1.png'
+30.0983 	EXP 	face: autoDraw = True
+30.5805 	EXP 	New trial (rep=2, index=10): {'images': 'real_images/p5.png'}
+30.5808 	WARNING 	Requested image 'real_images/p5.png' not found but similar filename 'real_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+30.5979 	EXP 	face: autoDraw = False
+30.5979 	EXP 	face: image = 'real_images/p5.png'
+30.5979 	EXP 	face: autoDraw = True
+31.0821 	EXP 	New trial (rep=2, index=11): {'images': 'ai_images/p2.png'}
+31.0824 	WARNING 	Requested image 'ai_images/p2.png' not found but similar filename 'ai_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+31.1004 	EXP 	face: autoDraw = False
+31.1004 	EXP 	face: image = 'ai_images/p2.png'
+31.1004 	EXP 	face: autoDraw = True
+31.5822 	EXP 	New trial (rep=3, index=0): {'images': 'ai_images/p4.png'}
+31.5825 	WARNING 	Requested image 'ai_images/p4.png' not found but similar filename 'ai_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+31.5975 	EXP 	face: autoDraw = False
+31.5975 	EXP 	face: image = 'ai_images/p4.png'
+31.5975 	EXP 	face: autoDraw = True
+32.0816 	EXP 	New trial (rep=3, index=1): {'images': 'real_images/p3.png'}
+32.0819 	WARNING 	Requested image 'real_images/p3.png' not found but similar filename 'real_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+32.0998 	EXP 	face: autoDraw = False
+32.0998 	EXP 	face: image = 'real_images/p3.png'
+32.0998 	EXP 	face: autoDraw = True
+32.5825 	EXP 	New trial (rep=3, index=2): {'images': 'real_images/p5.png'}
+32.5828 	WARNING 	Requested image 'real_images/p5.png' not found but similar filename 'real_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+32.5992 	EXP 	face: autoDraw = False
+32.5992 	EXP 	face: image = 'real_images/p5.png'
+32.5992 	EXP 	face: autoDraw = True
+33.0825 	EXP 	New trial (rep=3, index=3): {'images': 'ai_images/p1.png'}
+33.0827 	WARNING 	Requested image 'ai_images/p1.png' not found but similar filename 'ai_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+33.0989 	EXP 	face: autoDraw = False
+33.0989 	EXP 	face: image = 'ai_images/p1.png'
+33.0989 	EXP 	face: autoDraw = True
+33.3669 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+33.4439 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+33.5823 	EXP 	New trial (rep=3, index=4): {'images': 'real_images/p1.png'}
+33.5826 	WARNING 	Requested image 'real_images/p1.png' not found but similar filename 'real_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+33.5998 	EXP 	face: autoDraw = False
+33.5998 	EXP 	face: image = 'real_images/p1.png'
+33.5998 	EXP 	face: autoDraw = True
+34.0831 	EXP 	New trial (rep=3, index=5): {'images': 'ai_images/p3.png'}
+34.0834 	WARNING 	Requested image 'ai_images/p3.png' not found but similar filename 'ai_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+34.1014 	EXP 	face: autoDraw = False
+34.1014 	EXP 	face: image = 'ai_images/p3.png'
+34.1014 	EXP 	face: autoDraw = True
+34.5812 	EXP 	New trial (rep=3, index=6): {'images': 'real_images/p2.png'}
+34.5814 	WARNING 	Requested image 'real_images/p2.png' not found but similar filename 'real_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+34.5978 	EXP 	face: autoDraw = False
+34.5978 	EXP 	face: image = 'real_images/p2.png'
+34.5978 	EXP 	face: autoDraw = True
+35.0815 	EXP 	New trial (rep=3, index=7): {'images': 'ai_images/p6.png'}
+35.0817 	WARNING 	Requested image 'ai_images/p6.png' not found but similar filename 'ai_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+35.0979 	EXP 	face: autoDraw = False
+35.0979 	EXP 	face: image = 'ai_images/p6.png'
+35.0979 	EXP 	face: autoDraw = True
+35.0990 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+35.1306 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+35.5827 	EXP 	New trial (rep=3, index=8): {'images': 'real_images/p6.png'}
+35.5830 	WARNING 	Requested image 'real_images/p6.png' not found but similar filename 'real_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+35.5993 	EXP 	face: autoDraw = False
+35.5993 	EXP 	face: image = 'real_images/p6.png'
+35.5993 	EXP 	face: autoDraw = True
+36.0826 	EXP 	New trial (rep=3, index=9): {'images': 'real_images/p4.png'}
+36.0829 	WARNING 	Requested image 'real_images/p4.png' not found but similar filename 'real_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+36.0999 	EXP 	face: autoDraw = False
+36.0999 	EXP 	face: image = 'real_images/p4.png'
+36.0999 	EXP 	face: autoDraw = True
+36.5825 	EXP 	New trial (rep=3, index=10): {'images': 'ai_images/p2.png'}
+36.5827 	WARNING 	Requested image 'ai_images/p2.png' not found but similar filename 'ai_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+36.5989 	EXP 	face: autoDraw = False
+36.5989 	EXP 	face: image = 'ai_images/p2.png'
+36.5989 	EXP 	face: autoDraw = True
+37.0815 	EXP 	New trial (rep=3, index=11): {'images': 'ai_images/p5.png'}
+37.0818 	WARNING 	Requested image 'ai_images/p5.png' not found but similar filename 'ai_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+37.0989 	EXP 	face: autoDraw = False
+37.0989 	EXP 	face: image = 'ai_images/p5.png'
+37.0989 	EXP 	face: autoDraw = True
+37.5822 	EXP 	New trial (rep=4, index=0): {'images': 'ai_images/p1.png'}
+37.5825 	WARNING 	Requested image 'ai_images/p1.png' not found but similar filename 'ai_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+37.6008 	EXP 	face: autoDraw = False
+37.6008 	EXP 	face: image = 'ai_images/p1.png'
+37.6008 	EXP 	face: autoDraw = True
+38.0820 	EXP 	New trial (rep=4, index=1): {'images': 'real_images/p2.png'}
+38.0822 	WARNING 	Requested image 'real_images/p2.png' not found but similar filename 'real_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+38.0994 	EXP 	face: autoDraw = False
+38.0994 	EXP 	face: image = 'real_images/p2.png'
+38.0994 	EXP 	face: autoDraw = True
+38.5817 	EXP 	New trial (rep=4, index=2): {'images': 'real_images/p4.png'}
+38.5819 	WARNING 	Requested image 'real_images/p4.png' not found but similar filename 'real_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+38.5972 	EXP 	face: autoDraw = False
+38.5972 	EXP 	face: image = 'real_images/p4.png'
+38.5972 	EXP 	face: autoDraw = True
+39.0820 	EXP 	New trial (rep=4, index=3): {'images': 'real_images/p3.png'}
+39.0823 	WARNING 	Requested image 'real_images/p3.png' not found but similar filename 'real_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+39.0985 	EXP 	face: autoDraw = False
+39.0985 	EXP 	face: image = 'real_images/p3.png'
+39.0985 	EXP 	face: autoDraw = True
+39.4010 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+39.5822 	EXP 	New trial (rep=4, index=4): {'images': 'ai_images/p5.png'}
+39.5825 	WARNING 	Requested image 'ai_images/p5.png' not found but similar filename 'ai_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+39.5988 	EXP 	face: autoDraw = False
+39.5988 	EXP 	face: image = 'ai_images/p5.png'
+39.5988 	EXP 	face: autoDraw = True
+39.6482 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+40.0810 	EXP 	New trial (rep=4, index=5): {'images': 'real_images/p5.png'}
+40.0812 	WARNING 	Requested image 'real_images/p5.png' not found but similar filename 'real_images/p5.jpg' exists. This will be used instead but changing the filename is advised.
+40.0974 	EXP 	face: autoDraw = False
+40.0974 	EXP 	face: image = 'real_images/p5.png'
+40.0974 	EXP 	face: autoDraw = True
+40.5824 	EXP 	New trial (rep=4, index=6): {'images': 'real_images/p1.png'}
+40.5827 	WARNING 	Requested image 'real_images/p1.png' not found but similar filename 'real_images/p1.jpg' exists. This will be used instead but changing the filename is advised.
+40.5996 	EXP 	face: autoDraw = False
+40.5996 	EXP 	face: image = 'real_images/p1.png'
+40.5996 	EXP 	face: autoDraw = True
+41.0809 	EXP 	New trial (rep=4, index=7): {'images': 'real_images/p6.png'}
+41.0812 	WARNING 	Requested image 'real_images/p6.png' not found but similar filename 'real_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+41.0963 	EXP 	face: autoDraw = False
+41.0963 	EXP 	face: image = 'real_images/p6.png'
+41.0963 	EXP 	face: autoDraw = True
+41.5823 	EXP 	New trial (rep=4, index=8): {'images': 'ai_images/p4.png'}
+41.5826 	WARNING 	Requested image 'ai_images/p4.png' not found but similar filename 'ai_images/p4.jpg' exists. This will be used instead but changing the filename is advised.
+41.5981 	EXP 	face: autoDraw = False
+41.5981 	EXP 	face: image = 'ai_images/p4.png'
+41.5981 	EXP 	face: autoDraw = True
+42.0822 	EXP 	New trial (rep=4, index=9): {'images': 'ai_images/p6.png'}
+42.0825 	WARNING 	Requested image 'ai_images/p6.png' not found but similar filename 'ai_images/p6.jpg' exists. This will be used instead but changing the filename is advised.
+42.0960 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+42.1012 	EXP 	face: autoDraw = False
+42.1012 	EXP 	face: image = 'ai_images/p6.png'
+42.1012 	EXP 	face: autoDraw = True
+42.2337 	DATA 	Mouse: wheel shift=(0,0), pos=(638,363)
+42.5822 	EXP 	New trial (rep=4, index=10): {'images': 'ai_images/p2.png'}
+42.5825 	WARNING 	Requested image 'ai_images/p2.png' not found but similar filename 'ai_images/p2.jpg' exists. This will be used instead but changing the filename is advised.
+42.5995 	EXP 	face: autoDraw = False
+42.5995 	EXP 	face: image = 'ai_images/p2.png'
+42.5995 	EXP 	face: autoDraw = True
+43.0808 	EXP 	New trial (rep=4, index=11): {'images': 'ai_images/p3.png'}
+43.0810 	WARNING 	Requested image 'ai_images/p3.png' not found but similar filename 'ai_images/p3.jpg' exists. This will be used instead but changing the filename is advised.
+43.0985 	EXP 	face: autoDraw = False
+43.0985 	EXP 	face: image = 'ai_images/p3.png'
+43.0985 	EXP 	face: autoDraw = True
+43.5912 	EXP 	face: autoDraw = False
+43.6270 	EXP 	window1: mouseVisible = True
