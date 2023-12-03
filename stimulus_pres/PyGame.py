@@ -99,13 +99,12 @@ receiveBufferBufferLength = FrameLength * numberOfAcquiredChannels * 4
 receiveBuffer = bytearray(receiveBufferBufferLength)
 
 # Main acquisition loop for Unicorn BCI
-user_duration = 1  # image display duration (in seconds)
+user_duration = 2  # image display duration (in seconds)
 
 for i in range(0, int(user_duration * UnicornPy.SamplingRate / FrameLength)):
-    device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
-
-    data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
-    data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
+    #device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
+    #data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
+    #data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
 
     for event in pygame.event.get():
         if event.type == QUIT:
@@ -113,10 +112,6 @@ for i in range(0, int(user_duration * UnicornPy.SamplingRate / FrameLength)):
         if event.type == KEYDOWN:
             if event.key == K_ESCAPE:
                 pygame.quit()
-
-    # Add mind wandering condition to float array
-    if len(data[0]) == 17:  # exclude if data is too large due to overwriting error
-        data = np.append(data, [[0]], 1)
 
     # Open the file if it's not opened yet
     if file is None:
@@ -126,31 +121,43 @@ for i in range(0, int(user_duration * UnicornPy.SamplingRate / FrameLength)):
         file = open(dataFile, "ab")
 
     # Save Unicorn BCI data to csv
-    np.savetxt(file, data, delimiter=',', fmt='%.3f', newline='\n')
+    #np.savetxt(file, data, delimiter=',', fmt='%.3f', newline='\n')
 
-    if i % limitConsoleUpdateRate() == 0:
-        print(str(i) + " samples so far for Unicorn BCI.")
+    #if i % limitConsoleUpdateRate() == 0:
+    #    print(str(i) + " samples so far for Unicorn BCI.")
 
 # Image slideshow loop
 for repetition in range(num_repetitions):
     random.shuffle(image_filenames)
 
-    for image_filename in image_filenames:
+    for idx, image_filename in enumerate(image_filenames):
         image_path = os.path.join(image_filename)  # Assuming images are in a folder named 'images'
         image = pygame.image.load(image_path)
         image = pygame.transform.scale(image, (WINDOWWIDTH, WINDOWHEIGHT))
 
+        device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
+        data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
+        data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
+
         windowSurface.blit(image, (0, 0))
         pygame.display.flip()
 
-        timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = time.perf_counter()
         print(f"{timestamp} - Presented: {image_filename}")
 
-        # Placeholder for Unicorn BCI data acquisition start
-        # Replace the following line with actual Unicorn BCI code
-        # unicorn_bci_start()
-
         time.sleep(1)
+
+        current_image_type = 'real' if 'real' in image_filename else 'ai'
+
+        row_data = np.append(data, [[current_image_type, image_filename, timestamp]], 1)
+        np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
+
+        # Save Unicorn BCI data and image type to csv
+        #row_data = np.append(data, [[current_image_type, image_filename, timestamp]], 1)
+        #row_data = np.append(data, [[timestamp]], 1)
+        #row_data_str = np.array2string(row_data, separator=',', formatter={'str_kind': lambda x: f'"{x}"'})
+        #np.savetxt(file, [row_data_str], delimiter=',', fmt='%s', newline='\n')
+        #np.savetxt(file, row_data, delimiter=',', fmt='%.3f', newline='\n')
 
         windowSurface.fill(BACKGROUNDCOLOR)
         pygame.display.flip()
@@ -160,6 +167,7 @@ for repetition in range(num_repetitions):
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+    #pygame.quit()
 
 
 # Stop data acquisition for Unicorn BCI
