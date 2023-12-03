@@ -106,13 +106,6 @@ for i in range(0, int(user_duration * UnicornPy.SamplingRate / FrameLength)):
     #data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
     #data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
 
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.quit()
-        if event.type == KEYDOWN:
-            if event.key == K_ESCAPE:
-                pygame.quit()
-
     # Open the file if it's not opened yet
     if file is None:
         ts = time.time()
@@ -127,6 +120,13 @@ for i in range(0, int(user_duration * UnicornPy.SamplingRate / FrameLength)):
     #    print(str(i) + " samples so far for Unicorn BCI.")
 
 # Image slideshow loop
+device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
+data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
+data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
+bci_time = time.perf_counter()
+row_data = np.append(data, [[bci_time]], 1)
+np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
+
 for repetition in range(num_repetitions):
     random.shuffle(image_filenames)
 
@@ -142,22 +142,27 @@ for repetition in range(num_repetitions):
         windowSurface.blit(image, (0, 0))
         pygame.display.flip()
 
-        timestamp = time.perf_counter()
-        print(f"{timestamp} - Presented: {image_filename}")
+        picture_time = time.perf_counter()
+        print(f"{picture_time} - Presented: {image_filename}")
 
-        time.sleep(1)
+        current_image_type = 0 if 'real' in image_filename else 1
 
-        current_image_type = 'real' if 'real' in image_filename else 'ai'
-
-        row_data = np.append(data, [[current_image_type, image_filename, timestamp]], 1)
+        row_data = np.append(data, [[bci_time,current_image_type, image_filename, picture_time]], 1)
         np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
 
-        # Save Unicorn BCI data and image type to csv
-        #row_data = np.append(data, [[current_image_type, image_filename, timestamp]], 1)
-        #row_data = np.append(data, [[timestamp]], 1)
-        #row_data_str = np.array2string(row_data, separator=',', formatter={'str_kind': lambda x: f'"{x}"'})
-        #np.savetxt(file, [row_data_str], delimiter=',', fmt='%s', newline='\n')
-        #np.savetxt(file, row_data, delimiter=',', fmt='%.3f', newline='\n')
+        # Collect Unicorn BCI data for the duration of image presentation
+        start_time = time.perf_counter()
+
+        while time.perf_counter() - start_time < 2:  # 2 seconds for image presentation
+            device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
+            data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
+            data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
+
+            bci_time = time.perf_counter()
+            row_data = np.append(data, [[bci_time]], 1)
+            np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
+
+        time.sleep(1)
 
         windowSurface.fill(BACKGROUNDCOLOR)
         pygame.display.flip()
