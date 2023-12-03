@@ -101,30 +101,21 @@ receiveBuffer = bytearray(receiveBufferBufferLength)
 # Main acquisition loop for Unicorn BCI
 user_duration = 2  # image display duration (in seconds)
 
-for i in range(0, int(user_duration * UnicornPy.SamplingRate / FrameLength)):
-    #device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
-    #data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
-    #data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
-
-    # Open the file if it's not opened yet
-    if file is None:
-        ts = time.time()
-        dataFile = '../data/recordings/combined_recording_' + str(int(ts)) + '.csv'
-        os.makedirs(os.path.dirname(dataFile), exist_ok=True)
-        file = open(dataFile, "ab")
-
-    # Save Unicorn BCI data to csv
-    #np.savetxt(file, data, delimiter=',', fmt='%.3f', newline='\n')
-
-    #if i % limitConsoleUpdateRate() == 0:
-    #    print(str(i) + " samples so far for Unicorn BCI.")
+if file is None:
+    ts = time.time()
+    dataFile = '../data/recordings/combined_recording_' + str(int(ts)) + '.csv'
+    os.makedirs(os.path.dirname(dataFile), exist_ok=True)
+    file = open(dataFile, "ab")
 
 # Image slideshow loop
 device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
 data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
 data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
 bci_time = time.perf_counter()
-row_data = np.append(data, [[bci_time]], 1)
+# Create row data with zeros for the three empty columns
+row_data = np.zeros((FrameLength, 3))
+row_data = np.concatenate((data, row_data), axis=1)
+row_data = np.append(row_data, [[bci_time]], axis=1)
 np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
 
 for repetition in range(num_repetitions):
@@ -145,7 +136,7 @@ for repetition in range(num_repetitions):
         picture_time = time.perf_counter()
         print(f"{picture_time} - Presented: {image_filename}")
 
-        current_image_type = 0 if 'real' in image_filename else 1
+        current_image_type = 1 if 'real' in image_filename else 2
 
         row_data = np.append(data, [[bci_time,current_image_type, image_filename, picture_time]], 1)
         np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
@@ -159,7 +150,10 @@ for repetition in range(num_repetitions):
             data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
 
             bci_time = time.perf_counter()
-            row_data = np.append(data, [[bci_time]], 1)
+            # Create row data with zeros for the three empty columns
+            row_data = np.zeros((FrameLength, 3))
+            row_data = np.concatenate((data, row_data), axis=1)
+            row_data = np.append(row_data, [[bci_time]], axis=1)
             np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
 
         time.sleep(1)
