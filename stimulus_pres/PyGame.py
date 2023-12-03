@@ -10,8 +10,8 @@ import shutil
 from pygame.locals import *
 
 # Set up window, text, and font information
-WINDOWWIDTH = 600
-WINDOWHEIGHT = 600
+WINDOWWIDTH = 950
+WINDOWHEIGHT = 950
 TEXTCOLOR = (255, 255, 255)
 BACKGROUNDCOLOR = (0, 0, 0)
 FrameLength = 1
@@ -103,7 +103,7 @@ user_duration = 2  # image display duration (in seconds)
 
 if file is None:
     ts = time.time()
-    dataFile = '../data/recordings/combined_recording_' + str(int(ts)) + '.csv'
+    dataFile = '../data/training/ParticipantK' + str(int(ts)) + '.csv'
     os.makedirs(os.path.dirname(dataFile), exist_ok=True)
     file = open(dataFile, "ab")
 
