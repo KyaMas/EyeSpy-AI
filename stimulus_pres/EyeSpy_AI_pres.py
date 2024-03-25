@@ -8,6 +8,7 @@ import random
 import numpy as np
 import shutil
 from pygame.locals import *
+import sys
 
 # Set up window, text, and font information
 WINDOWWIDTH = 950
@@ -52,17 +53,17 @@ windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Combined Image Slideshow and Unicorn BCI')
 
 # Set up fonts
-font = pygame.font.SysFont(None, 48)
+font = pygame.font.SysFont(None, 48) # type: ignore
 
 # Get image filenames for both "ai_images" and "real_images"
-ai_image_filenames = get_image_filenames('ai_images')
-real_image_filenames = get_image_filenames('real_images')
+ai_image_filenames = get_image_filenames(r'C:\Users\Kya\git\EyeSpy-repo\EyeSpy-AI\stimulus_pres\ai_images')
+real_image_filenames = get_image_filenames(r'C:\Users\Kya\git\EyeSpy-repo\EyeSpy-AI\stimulus_pres\real_images')
 
 # Combine the two lists
 image_filenames = ai_image_filenames + real_image_filenames
 
 # Number of repetitions for image slideshow
-num_repetitions = 4
+num_repetitions = 16
 
 # Show the "Start" screen for image slideshow
 drawText('Welcome to the combined script!',
@@ -99,11 +100,11 @@ receiveBufferBufferLength = FrameLength * numberOfAcquiredChannels * 4
 receiveBuffer = bytearray(receiveBufferBufferLength)
 
 # Main acquisition loop for Unicorn BCI
-user_duration = 2  # image display duration (in seconds)
+user_duration = 1  # image display duration (in seconds)
 
 if file is None:
     ts = time.time()
-    dataFile = '../data/training/ParticipantK' + str(int(ts)) + '.csv'
+    dataFile = '../EyeSpy-AI/data/training/ParticipantK' + str(int(ts)) + '.csv'
     os.makedirs(os.path.dirname(dataFile), exist_ok=True)
     file = open(dataFile, "ab")
 
@@ -144,7 +145,7 @@ for repetition in range(num_repetitions):
         # Collect Unicorn BCI data for the duration of image presentation
         start_time = time.perf_counter()
 
-        while time.perf_counter() - start_time < 2:  # 2 seconds for image presentation
+        while time.perf_counter() - start_time < 1:  # 1 seconds for image presentation
             device.GetData(FrameLength, receiveBuffer, receiveBufferBufferLength)
             data = np.frombuffer(receiveBuffer, dtype=np.float32, count=numberOfAcquiredChannels * FrameLength)
             data = np.reshape(data, (FrameLength, numberOfAcquiredChannels))
@@ -156,10 +157,11 @@ for repetition in range(num_repetitions):
             row_data = np.append(row_data, [[bci_time]], axis=1)
             np.savetxt(file, row_data, delimiter=',', fmt='%s', newline='\n')
 
-        time.sleep(1)
 
         windowSurface.fill(BACKGROUNDCOLOR)
         pygame.display.flip()
+        time.sleep(.5) # .5 second gap between images
+
 
         # Handle events to keep the window responsive
         for event in pygame.event.get():
